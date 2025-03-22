@@ -1,0 +1,11 @@
+{
+    "name": "alexislopezfregoso/proyect-t",
+    "autoload": {
+        "psr-4": {
+            "Alexislopezfregoso\\ProyectT\\": "src/"
+        }
+    },
+    "require": {
+        "resend/resend-php": "^0.15.2"
+    }
+}

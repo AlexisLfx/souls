@@ -1,0 +1,487 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Strongly Typed by HTML5 UP</title>
+      <!-- Enlace a hojas de estilo -->
+	  <link rel="stylesheet" href="assets/css/main.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	</head>
+	<body class="homepage is-preload">
+			<!--boton flotante-->
+			<a href="#" class="btn-flotante">
+				<img src="images/soulsback.jpg" alt="Icono">
+			</a>
+
+  <!-- Header -->
+  <section id="header">
+	<div class="background-container">
+		<canvas id="canvas"></canvas>
+		<div class="container">
+			<!--titulo-->
+		<div class="animated-text">
+			<h6>Despierta tu instinto. Domina tu destino </h6>
+			<a href="store.html" class="btn-dos">IR A LA TIENDA</a>	
+		</div>
+	</div>
+			<!-- Navegación -->
+			<nav id="nav">
+				<ul>
+					<li class="espaciado">
+						<a class="icon" href="index.html">
+							<span class="logo-souls">SOULS</span>
+						</a>
+					</li>
+					<li>
+						<a class="icon" href="store.html"><span> TIENDA</span></a>
+					</li>
+					<li>
+						<a class="icon" href="about_us.html"><span> SOBRE NOSOTROS</span></a>
+					</li>
+				  <!--  <li>
+						<a class="icon" href="no-sidebar.html"><span> COMUNIDAD</span></a>
+					</li>-->
+					<li>
+						<a href="#" class="icon"><span> CONTACTO</span></a>
+						<ul>
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li><a href="#">Magna phasellus</a></li>
+							<li><a href="#">Etiam dolore nisl</a></li>
+							<li>
+								<a href="#">Phasellus consequat</a>
+								<ul>
+									<li><a href="#">Magna phasellus</a></li>
+									<li><a href="#">Etiam dolore nisl</a></li>
+									<li><a href="#">Phasellus consequat</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Veroeros feugiat</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<!-- Barra de búsqueda alineada a la derecha -->
+				<div class="search-container" >
+					<input type="text" class="search-bar" placeholder="Buscar...">
+					<button class="search-button" type="submit">
+						<i class="fas fa-search"></i> <!-- Ícono de búsqueda -->	
+				</button>
+			  </div>
+			</nav>
+		</div>
+				<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" oninput="render()"></textarea>
+				<pre id="error"></pre>
+				<div id="indicator"></div>
+				<div id="controls">
+				  <div class="controls">
+					<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+					<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution" onchange="toggleResolution()">
+					<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+				  </div>
+				</div>
+				<script type="x-shader/x-fragment"> 	#version 300 es
+				precision highp float;
+				out vec4 O;
+				uniform vec2 resolution;
+				uniform float time;
+				uniform sampler2D pebbles;
+				#define FC gl_FragCoord.xy
+				#define T time
+				#define R resolution
+				#define MN min(R.x,R.y)
+				// Returns a pseudo random number for a given point (white noise)
+				float rnd(vec2 p) {
+				  p=fract(p*vec2(12.9898,78.233));
+				  p+=dot(p,p+34.56);
+				  return fract(p.x*p.y);
+				}
+				// Returns a pseudo random number for a given point (value noise)
+				float noise(in vec2 p) {
+				  vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f);
+				  float
+				  a=rnd(i),
+				  b=rnd(i+vec2(1,0)),
+				  c=rnd(i+vec2(0,1)),
+				  d=rnd(i+1.);
+				  return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
+				}
+				// Returns a pseudo random number for a given point (fractal noise)
+				float fbm(vec2 p) {
+				  float t=.0, a=1.; mat2 m=mat2(1.,-.5,.2,1.2);
+				  for (int i=0; i<5; i++) {
+					t+=a*noise(p);
+					p*=2.*m;
+					a*=.5;
+				  }
+				  return t;
+				}
+				float clouds(vec2 p) {
+				  float d=1., t=.0;
+				  for (float i=.0; i<3.; i++) {
+					float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);
+					t=mix(t,d,a);
+					d=a;
+					p*=2./(i+1.);
+				  }
+				  return t;
+				}
+				void main(void) {
+				  vec2 uv=(FC-.5*R)/MN,st=uv*vec2(2,1);
+				  vec3 col=vec3(0);
+				  float bg=clouds(vec2(st.x+T*.5,-st.y));
+				  uv*=1.-.3*(sin(T*.2)*.5+.5);
+				  for (float i=1.; i<12.; i++) {
+					uv+=.1*cos(i*vec2(.1+.01*i, .8)+i*i+T*.5+.1*uv.x);
+					vec2 p=uv;
+					float d=length(p);
+					col+=.00125/d*(cos(sin(i)*vec3(1,2,3))+1.);
+					float b=noise(i+p+bg*1.731);
+					col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));
+					col=mix(col,vec3(bg*.12,bg*.137,bg*.05),d);
+				  }
+				  O=vec4(col,1);
+				}
+				</script>
+  </section>
+</body>
+</html>
+
+			<!-- Features -->
+				<section id="features">
+					<div class="container">
+						<header>
+							<h2>"COLECCIONES EXCLUSIVAS PARA TU <strong>ESTILO UNICO"</strong>!</h2>
+						</header>
+						<div class="row aln-center">
+							<div class="col-4 col-6-medium col-12-small">
+
+								<!-- Feature -->
+									<section>
+										<a href="#" class="image featured"><img src="images/gorras/dragon.jpeg" alt="" /></a>
+										<header>
+											<h4>GORRAS ESPECIALES PARA SU PERSONALIDAD</h4>
+										</header>
+										<p>This is <strong>Strongly Typed</strong>, a free, fully responsive site template
+										by <a href="http://html5up.net">HTML5 UP</a>. Free for personal and commercial use under the
+										<a href="http://html5up.net/license">CCA 3.0 license</a>.</p>
+									</section>
+
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
+
+								<!-- Feature -->
+									<section>
+										<a href="#" class="image featured"><img src="images/hoddies/present.jpg" alt="" /></a>
+										<header>
+											<h4>HODDIES ESPECIALES PARA SU PERSONALIDAD</h4>
+										</header>
+										<p><a href="http://html5up.net">HTML5 UP</a> is a side project of <a href="http://twitter.com/ajlkn">AJ’s</a> (= me).
+										I started it as a way to both test my responsive tools and sharpen up my coding
+										and design skills a bit.</p>
+									</section>
+
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
+
+								<!-- Feature -->
+									<section>
+										<a href="#" class="image featured"><img src="images/caps.jpg" alt="" /></a>
+										<header>
+											<h4>PLAYERAS ESPECIALES PARA SU PERSONALIDAD</h4>
+										</header>
+										<p><strong>Responsive Tools</strong> is a simple set of tools for building responsive
+										sites and apps. All of my templates at <a href="http://html5up.net">HTML5 UP</a> are built using these tools.</p>
+									</section>
+
+							</div>
+							<div class="col-12">
+								<ul class="actions">
+									<li><a href="store.html" class="button">IR A LA TIENDA</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="container">
+						<p>
+							<strong>Visión:</strong> <br>
+							
+							Crear una comunidad global y conectada que adopte los valores,
+							
+							fortalezas y destrezas de los depredadores más letales del reino
+							
+							animal, fomentando un sentido de pertenencia, trabajo en equipo y
+							
+							<strong>desarrollo personal</strong> a través de actividades recreativas y sinérgicas.
+							</p>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						
+						<div class="row">
+
+							<!-- Content -->
+								<div id="content" class="col-8 col-12-medium">
+
+									<!-- Post -->
+										<article class="box post">
+											<header>
+												<h4><a href="#"><strong>SOULS </strong> es una comunidad dinámica donde sus miembros se agrupan en clanes inspirados en depredadores, desarrollando sus fortalezas y valores en un entorno de <strong>creciemiento y colaboración</strong> .<br/><br>
+											</header>
+											<a href="#" class="image featured"><img src="images/bannerdrg.jpg" alt="" /></a>
+											<h3>I mean isn't it possible?</h3>
+											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+											Curabitur leo nibh, rutrum eu malesuada in tristique.</p>
+											<!--<ul class="actions">
+												<li><a href="#" class="button icon solid fa-file">Continue Reading</a></li>
+											</ul>-->
+										</article>
+
+									<!-- Post 
+										<article class="box post">
+											<header>
+												<h2><a href="#">By the way, many thanks to <strong>regularjane</strong>
+												for these awesome demo photos</a></h2>
+											</header>
+											<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+											<h3>You should probably check out her work</h3>
+											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+											Curabitur leo nibh, rutrum malesuada.</p>
+											<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat
+											Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula
+											vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet
+											magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in,
+											tristique at erat. Curabitur leo nibh, rutrum eu malesuada in, tristique
+											at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna
+											tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat
+											magna tempus.</p>
+											<ul class="actions">
+												<li><a href="#" class="button icon solid fa-file">Continue Reading</a></li>
+											</ul>
+										</article>
+									-->
+
+								</div>
+
+							<!-- Sidebar -->
+								<div id="sidebar" class="col-4 col-12-medium">
+
+									<!-- Excerpts -->
+										<section>
+											<ul class="divided">
+												<li>
+
+													<!-- Excerpt -->
+														<article class="box excerpt">
+															<header>
+																<span class="date">July 30</span>
+																<h3><a href="#">CLANES</a></h3>
+															</header>
+															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
+															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+														</article>
+
+												</li>
+												<li>
+
+													<!-- Excerpt -->
+														<article class="box excerpt">
+															<header>
+																<span class="date">July 28</span>
+																<h3><a href="#">CLANES</a></h3>
+															</header>
+															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
+															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+														</article>
+
+												</li>
+
+												<li>
+
+													<!-- Excerpt -->
+														<article class="box excerpt">
+															<header>
+																<span class="date">July 24</span>
+																<h3><a href="#">CLANES</a></h3>
+															</header>
+															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
+															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+														</article>
+
+												</li>
+											</ul>
+										</section>
+
+									<!-- Highlights -->
+										<section>
+											<ul class="divided">
+												<li>
+
+													<!-- Highlight 
+														<article class="box highlight">
+															<header>
+																<h3><a href="#">Something of note</a></h3>
+															</header>
+															<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
+															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
+															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
+															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
+															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+															<ul class="actions">
+																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
+															</ul>
+														</article>
+
+												</li>
+												<li>
+
+													- Highlight 
+														<article class="box highlight">
+															<header>
+																<h3><a href="#">Something of less note</a></h3>
+															</header>
+															<a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
+															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
+															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
+															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
+															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+															<ul class="actions">
+																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
+															</ul>
+														</article>-->
+
+												</li>
+											</ul>
+										</section>
+
+								</div>
+
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<header>
+								<h2>PREGUNTAS O COMENTARIOS <strong>CONTACTENOS:</strong></h2>
+							</header>
+							<div class="row">
+								<div class="col-6 col-12-medium">
+									<section> 
+										<form action="https://formsubmit.co/soulsmkotw@gmail.com" method="POST">
+											<label for="name">Tu Nombre:</label>
+											<input type="text" name="name" >
+											
+											<label for="email">Tu Email:</label>
+											<input type="email"  name="email" >
+											
+											<label for="subject">Asunto:</label>
+											<input type="text" name="subject">
+											
+											<label for="message">Mensaje:</label>
+											<textarea name="message" rows="6"></textarea>
+											
+											<button type="submit">Enviar</button>
+										</form>
+									</section>
+								
+							</div>
+							<div class="col-6 col-12-medium">
+								<section>
+									<p>Nos reservamos el derecho de modificar este descargo
+										 de responsabilidad en cualquier momento sin previo
+										  aviso. Se recomienda revisar esta página periódicamente.</p>
+										  <div class="row">
+											<div class="col-6 col-12-small">
+												<ul class="icons">
+													<li>
+														<i class="icon solid fa-home"></i>
+														calle 1234<br />
+														ciudad, zona y cp<br />
+														USA
+													</li>
+													<li>
+														<i class="icon solid fa-phone"></i>
+														(000) 000-0000
+													</li>
+													<li>
+														<i class="icon solid fa-envelope"></i>
+														<a href="mailto:info@untitled.tld">info@untitled.tld</a>
+													</li>
+												</ul>
+											</div>
+											<div class="col-6 col-12-small">
+												<ul class="icons">
+													<li>
+														<a href="https://www.youtube.com" target="_blank">
+															<img src="images/redes/youtube.jpg" alt="YouTube" width="30"> YouTube
+														</a>
+													</li>
+													<li>
+														<a href="https://www.tiktok.com" target="_blank">
+															<img src="images/redes/tiktok.jpg" alt="TikTok" width="30"> TikTok
+														</a>
+													</li>
+													<li>
+														<a href="https://www.instagram.com" target="_blank">
+															<img src="images/redes/ig.jpg" alt="Instagram" width="30"> Instagram
+														</a>
+													</li>
+													<li>
+														<a href="https://www.facebook.com" target="_blank">
+															<img src="images/redes/facebook.jpg" alt="Facebook" width="30"> Facebook
+														</a>
+													</li>
+													
+												</ul>
+												
+												
+											</div>
+										</div>
+				</section>
+				
+		</div>		
+		
+		<div id="copyright" class="container">
+			<ul class="links">
+				<li>&copy; ©Copyright 2025 SOULS.  All rights reserved. </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/shooting-star.js"></script>
+
+
+	</body>
+</html>

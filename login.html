@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            padding: 20px;
+            width: 400px;
+        }
+        .left {
+            background-color: #007BFF; /* Color azul */
+            color: white;
+            border-radius: 10px 0 0 10px;
+            padding: 20px;
+            flex: 1;
+        }
+        .right {
+            flex: 1;
+            padding: 20px;
+        }
+        h2 {
+            margin: 0 0 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .social-login {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .social-login img {
+            width: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>Hello, Welcome!</h2>
+            <p>Don't have an account?</p>
+            <button onclick="window.location.href='register.html'">Register</button>
+        </div>
+        <div class="right">
+            <h2>Login</h2>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <p><a href="#">Forgot Password?</a></p>
+                <button type="submit">Login</button>
+            </form>
+            <p>or login with social platforms</p>
+            <div class="social-login">
+                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google">
+                <img src="https://img.icons8.com/color/48/000000/github-2.png" alt="GitHub">
+                <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
