@@ -9,6 +9,7 @@
     inset -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.25);
   cursor: default;
 }
+
 ::-webkit-scrollbar-track {
   background: #333;
 }
@@ -16,83 +17,59 @@
   background: #fff;
   color: #333;
 }
-.background-container {
-  position: relative;
-  width: auto;
-  height: auto;
-  background: linear-gradient(45deg, #ff0000, #ff7300, #ff0000);
-  background-size: 400% 400%;
-  animation: gradientAnimation 5s infinite alternate;
-  overflow: hidden;
-}
-html, body {
-  height: auto; /* Permitimos que la página crezca con el contenido */
-  margin: 0;
-  overflow: auto; /* Evitamos que el fondo bloquee el contenido */
-}
+
 html,
 body {
-  
-  height: 100vh;
-  height: 100dvh;
+  width: auto;
+  height: auto;
   margin: 0;
   overflow: hidden;
 }
 body {
-  display: grid;
-  grid-template-rows: calc(100dvh - 4rem) 4rem;
+  display: inline-block;
+  height: 100%;
+  grid-template-rows: calc(20dvh - 2rem) 2rem;
   font-family: system-ui, sans-serif;
 }
-.header-container {
-  position: relative; /* Para permitir el posicionamiento de los elementos dentro */
-  z-index: 1; /* Asegura que el contenido esté encima del fondo */
-  text-align: center; /* Centra el texto */
-  padding: 1cap; /* Espaciado alrededor del contenido */
-}
-background-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: -1;
-}
+
 .background-animation {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   z-index: -1;
 }
+
 canvas,
 .editor,
 #controls {
   grid-row: 1;
   grid-column: 1;
 }
+
 #canvas {
-  display: block;
-  position: absolute;
+  display: inline-block;
+  position: block;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
 }
+
 .animated-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 100%;
+  left: 100%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1; 
   color: white;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   opacity: 0;
   animation: fadeInUp 1.5s ease-in-out forwards;
@@ -118,6 +95,7 @@ canvas,
 .animated-text .button:hover {
   background-color: #a8741a;
 }
+
 .editor {
   color: #fefefe;
   tab-size: 2;
@@ -137,6 +115,7 @@ canvas,
   overflow: auto;
   text-wrap: pretty;
 }
+
 #indicator {
   visibility: hidden;
   position: absolute;
@@ -213,7 +192,7 @@ canvas,
   50% {
     transform: scale(1.0125);
   }
-  100% {
+  auto {
     transform: scale(1);
   }
 }
@@ -256,4 +235,34 @@ input:hover {
 }
 #btnReset::after {
   content: '⏮️';
+}
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.0125);
+  }
+}
+
+@media (max-width: 1024px) {
+  .animated-text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-text {
+    font-size: 1.2rem;
+  }
+  .animated-text .button {
+    padding: 0.6rem 1rem;
+  }
 }

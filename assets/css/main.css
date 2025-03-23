@@ -1,7 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700");
 
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -55,12 +54,10 @@ mark {
 	background-color: transparent;
 	color: inherit;
 }
-
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
-
 input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -134,6 +131,29 @@ input, select, textarea {
 		letter-spacing: 2px;
 		margin: 0 0 1.25em 0;
 	}
+	h5 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: #0d0d0d;
+		text-shadow: 
+			1px 1px 0 #d0d2d9,
+			-1px -1px 0 #d0d2d9,
+			1px -1px 0 #d0d2d9,
+			-1px 1px 0 #d0d2d9; 
+		letter-spacing: 2px;
+		margin: 0;
+		font-weight: bold;
+		z-index: 1;
+		padding: 5px 10px; /* Padding ajustable */
+		border-radius: 10px;
+		font-size: 1.2em; /* Tamaño base */
+		line-height: 1; 
+		max-width: 80%; /* Limita el ancho máximo para evitar amontonamiento */
+		word-wrap: break-word; /* Permite que el texto se parta si es muy largo */
+	}
 	h6 {
 		position: absolute;
 		top: 45%;
@@ -142,23 +162,44 @@ input, select, textarea {
 		text-align: center;
 		color: #0d0d0d;
 		text-shadow: 
-        1px 1px 0 #d0d2d9, /* Borde superior izquierdo */
-        -1px -1px 0 #d0d2d9, /* Borde inferior derecho */
-        1px -1px 0 #d0d2d9, /* Borde inferior izquierdo */
-        -1px 1px 0 #d0d2d9; 
-		@media (max-width: 768px) {
-			font-size: 2rem;
-		}
-		@media (min-width: 1024px) {
-			font-size: 2em;
-		}		
-		letter-spacing: 3px;
-		margin: 0 0 1.25em 0;
+			1px 1px 0 #d0d2d9,
+			-1px -1px 0 #d0d2d9,
+			1px -1px 0 #d0d2d9,
+			-1px 1px 0 #d0d2d9; 
+		letter-spacing: 2px;
+		margin: 0;
 		font-weight: bold;
 		z-index: 1;
-		padding: 20px;
+		padding: 10px 20px; /* Padding ajustable */
 		border-radius: 10px;
+		font-size: 1.2em; /* Tamaño base */
+		line-height: 1; 
+		max-width: 80%; /* Limita el ancho máximo para evitar amontonamiento */
+		word-wrap: break-word; /* Permite que el texto se parta si es muy largo */
 	}
+	/*celular*/
+	@media (max-width: 480px) {
+		h6 {
+			font-size: 1em;
+			padding: 10px 15px;
+		}
+	}
+	/* Tablet */
+	@media (max-width: 768px) {
+		h6 {
+			font-size: 1.5em;
+			padding: 15px 25px;
+		}
+	}
+	
+	/* Escritorio grande */
+	@media (min-width: 1024px) {
+		h6 {
+			font-size: 3em;
+			padding: 20px 30px;
+		}
+	}
+	
 
 	a {
 		-moz-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
@@ -1648,35 +1689,6 @@ input, select, textarea {
 
 /* Icons */
 
-			/* Estilo para el ícono del carrito */
-#cart-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 25px;
-    background-color: #d0d2d9; 
-    border: 3px solid #9c651c; 
-    border-radius: 30%;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; 
-	color: #8c651c;
-}
-
-#cart-icon:hover {
-    background-color: #d0d2d9; 
-    transform: scale(1.1); 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
-}
-
-/* Efecto al hacer clic */
-#cart-icon:active {
-    transform: scale(1); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-}
-
-
 	ul.icons {
 		list-style: none;
 		padding-left: 0;
@@ -1713,7 +1725,6 @@ input, select, textarea {
 				}
 
 /* Form */
-
 	form label {
 		font-weight: 600;
 		text-transform: uppercase;
@@ -1831,7 +1842,7 @@ input, select, textarea {
     transform: translate(-50%, -50%); 
     z-index: 10; 
     background-color: #0D0D0D;
-    color: #d0d0d0;
+    color: #ffa600;
     border: none;
     border-radius: 8px;
     padding: 12px 24px;
@@ -1841,7 +1852,7 @@ input, select, textarea {
     transition: background-color 0.3s, transform 0.3s;
 }
 .btn-dos:hover {
-    color: #8c651c; 
+    color: #50150f; 
 }
 
 	input[type="button"],
@@ -2045,10 +2056,8 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		position: relative;
 		background: #000000;
 		text-align: center;
-		
 	}
 	
 		#header > .container {
@@ -2079,16 +2088,14 @@ input, select, textarea {
 			text-align: left;
 		}
 		
-
 		/*Estilo de la  imagen logo principal*/
 		/* Estilo general para body y html */
 body, html {
-    margin: 0;
+    margin: 10;
     padding: 0;
     height: 100%;
-    width: 100%;
+    width: auto;
 }
-
 
 .image-center {
     display: flex;
@@ -2117,38 +2124,54 @@ li.espaciado a {
 /* Contenedor de la barra de búsqueda */
 .search-container {
     display: flex;
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
+/* Formulario que contiene la barra y el botón */
+#searchForm {
+    display: flex;
+    align-items: center;
+}
 
+/* Estilo de la barra de búsqueda */
 .search-bar {
-    padding: px 10px; 
-    font-size: 14px; 
-    border-radius: 5px; 
-    border: 1px solid #ccc; 
-    margin-right: 10px; 
-    width: 200px; 
+    width: 300px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s;
 }
 
+/* Efecto al hacer focus en la barra de búsqueda */
+.search-bar:focus {
+    border-color: #0d0d0d;
+    box-shadow: 0 0 5px rgba(90, 103, 216, 0.5);
+}
 
+/* Estilo del botón de búsqueda */
 .search-button {
-    background-color: #8c651c; 
-    color: #d0d2d9;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 5px;
+    background-color: #0d0d0d;
+    color: white;
+    border: 2px solid #0d0d0d;
+    padding: 10px 15px;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
+/* Efecto al pasar el cursor por encima del botón */
 .search-button:hover {
-    background-color: #8c651c; 
+    background-color: #434190;
+    border-color: #434190;
 }
 
-
-.search-button i {
-    font-size: 16px;
-}
 .btn-flotante {
     max-width: 76px; 
     max-height: 76px; 
@@ -2161,8 +2184,6 @@ li.espaciado a {
     transition: all 300ms ease 0ms;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     z-index: 99;
-
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2266,15 +2287,18 @@ main {
     background-color: #2c2fa5;
 }
 
+/*nav*/
 #nav {
     font-family: 'papyrus';
     position: absolute;
-    top: 3em;
+    top: 4em;
     left: 0;
     width: 100%;
+	overflow-x: auto; 
+    white-space: nowrap;
     cursor: default;
 }
- 
+
 #nav > ul > li {
     display: inline-block;
     padding-right: 0.05em;
@@ -2297,7 +2321,7 @@ main {
 
 #nav > ul > li > a .logo-souls {
 	color: #8c651c;
-    font-size: 30px;  
+    font-size: 40px;  
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -2330,6 +2354,18 @@ main {
     font-size: 0.85em;
     letter-spacing: 3px;
 }
+/* Adaptación en pantallas más pequeñas */
+@media (max-width: 768px) {
+    #nav > ul > li > a {
+        font-size: 0.85rem;
+    }
+}
+/* Adaptación en pantallas grandes */
+@media (min-width: 1024px) {
+    #nav > ul > li > a {
+        font-size: 1.1rem;
+    }
+}
 
 /* Submenús */
 #nav > ul > li > ul {
@@ -2338,13 +2374,13 @@ main {
 
 #nav > ul > li.active > a:before,
 #nav > ul > li:hover > a:before {
-    background: #ED786A;
+    background: #fff;
     color: #fff;
 }
 
 #nav > ul > li.active > a > span,
 #nav > ul > li:hover > a > span {
-    color: #ED786A;
+    color: #0d0d0d;
 }
 
 	.dropotron {
@@ -2537,7 +2573,6 @@ main {
 		}
 
 /* Footer */
-
 	#footer {
 		position: relative;
 		overflow: hidden;
@@ -2893,24 +2928,20 @@ main {
 			}
 
 		/* Sidebar */
-
 			#sidebar {
 				padding-top: 6em;
 			}
-
 	}
 
 /* Small */
-
 	@media screen and (max-width: 736px) {
 
 		/* Basic */
-
 			body, input, textarea, select {
 				font-size: 11pt;
 			}
 
-			h2, h3, h4, h5{
+			h2, h3, h4{
 				font-size: 1.2em;
 				letter-spacing: 2px;
 				text-align: center;

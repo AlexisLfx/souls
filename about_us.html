@@ -69,18 +69,62 @@
                         </li>
                     </ul>
                     
-                    <!-- Barra de búsqueda alineada a la derecha -->
-                    <div class="search-container">
-                        <input type="text" class="search-bar" placeholder="Buscar...">
-                        <button class="search-button" type="submit">
-                            <i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
-                        </button>
-                    </div>
+                  <!-- Barra de búsqueda alineada a la derecha -->
+					<div class="search-container">
+						<form id="searchForm" onsubmit="search(event)">
+							<input type="text" id="searchInput" class="search-bar" placeholder="Buscar...">
+							<button class="search-button" type="submit">
+								<i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
+							</button>
+						</form>
+					</div>
                 </nav>
             </div>
         </section>
-    </div>
-
+		<script>
+			function search(event) {
+				event.preventDefault();
+		
+				const query = document.getElementById("searchInput").value.trim().toLowerCase();
+				if (query === "") {
+					alert("Por favor, ingresa un término de búsqueda.");
+					return;
+				}
+		
+				// Diccionario de búsqueda con términos clave y sus enlaces correspondientes
+				const pages = {
+					"tienda": "store.html",
+					"sobre nosotros": "about_us.html",
+					"comunidad": "community.html", // Si tienes esta página
+					"inicio": "index.html",
+					"contacto": "#contacto" // Puedes poner un ID o cambiar por una URL específica
+				};
+		
+				// Verificar si el término de búsqueda coincide con alguna página
+				for (const key in pages) {
+					if (query.includes(key)) {
+						window.location.href = pages[key];
+						return;
+					}
+				}
+		
+				// Si no coincide con ninguna página, busca dentro del contenido actual
+				const elements = document.querySelectorAll("body *"); 
+				let found = false;
+		
+				elements.forEach(element => {
+					if (element.innerText && element.innerText.toLowerCase().includes(query)) {
+						element.scrollIntoView({ behavior: "smooth", block: "center" });
+						found = true;
+						return;
+					}
+				});
+		
+				if (!found) {
+					alert("No se encontró ninguna coincidencia.");
+				}
+			}
+		</script>
 </body>
 </html>
 
