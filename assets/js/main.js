@@ -1,7 +1,7 @@
 /*Alexis Lopez Fregoso*/
 
 (function($) {
-
+	
 	var	$window = $(window),
 		$body = $('body');
 

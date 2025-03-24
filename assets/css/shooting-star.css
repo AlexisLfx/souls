@@ -20,14 +20,14 @@
 
 html,
 body {
-  width: auto;
-  height: auto;
+  width: 50vh;
+  height: 50vh;
   margin: 0;
   overflow: hidden;
 }
 body {
   display: inline-block;
-  height: 100%;
+  height: 50vh;
   grid-template-rows: calc(20dvh - 2rem) 2rem;
   font-family: system-ui, sans-serif;
 }
@@ -57,7 +57,7 @@ canvas,
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   z-index: 0;
 }
 
@@ -65,7 +65,7 @@ canvas,
   position: absolute;
   top: 100%;
   left: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-100%, -100%);
   text-align: center;
   z-index: 1; 
   color: white;
