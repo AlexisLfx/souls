@@ -21,21 +21,21 @@
 html,
 body {
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  overflow-x: hidden;
 }
 body {
   display: center;
   grid-template-rows: calc(20dvh - 2rem) 2rem;
   font-family: system-ui, sans-serif;
-  min-height: 100vh; /* Ensure body takes at least the full viewport height */
+  min-height: 100vh;
 }
 
 .background-animation {
-  position: fixed; /* Changed to fixed to stay behind content */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Match the initial height, adjust as needed */
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -61,9 +61,9 @@ canvas,
 
 .animated-text {
   position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   z-index: -1;
   color: white;
@@ -71,7 +71,7 @@ canvas,
   font-weight: bold;
   opacity: 0;
   animation: fadeInUp 1.5s ease-in-out forwards;
-  width: 90%; /* Adjust width as needed */
+  width: 90%;
 }
 
 .animated-text h3 {
@@ -81,7 +81,7 @@ canvas,
 
 .animated-text.button {
   display: inline-block;
-  background-color: #c28a2d; /* Color dorado */
+  background-color: #c28a2d;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
@@ -148,7 +148,7 @@ input:hover {
 #btnReset::after {
   content: '⏮️';
 }
-/* Animations */
+
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -161,7 +161,7 @@ input:hover {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate(-50%, -60%); /* Start a bit higher */
+    transform: translate(-50%, -60%);
   }
   to {
     opacity: 1;
@@ -171,21 +171,21 @@ input:hover {
 
 @media (max-width: 1024px) {
  .animated-text {
-    font-size: 1.8rem; /* Adjusted font size */
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 768px) {
  .animated-text {
-    font-size: 1.4rem; /* Adjusted font size */
+    font-size: 1.4rem;
   }
 }
 
 @media (max-width: 480px) {
  .animated-text {
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 1rem;
   }
  .animated-text.button {
-    padding: 0.5rem 1rem; /* Adjusted button padding */
+    padding: 0.5rem 1rem;
   }
 }

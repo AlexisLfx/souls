@@ -180,7 +180,7 @@ button {
 }
 
 
-/* Botón flotante */
+
 .btn-flotante {
   max-width: 40px;
   max-height: 40px;
@@ -205,7 +205,7 @@ button {
   transform: translateY(-7px);
 }
 
-/* Header */
+
 
 
 #headerS {
@@ -269,7 +269,7 @@ footer a {
   text-decoration: underline;
 }
 
-/* Menú CONTACTO */
+
 .icon {
   position: relative;
   z-index: 10;
@@ -297,9 +297,9 @@ footer a {
   display: block;
 }
 
-/* 🔽 RESPONSIVE DESIGN 🔽 */
 
-/* 📱 Dispositivos pequeños (celulares) */
+
+
 @media only screen and (max-width: 600px) {
   body {
     font-size: 14px;
@@ -341,7 +341,7 @@ footer a {
   background-color: #333;
 }
 
-/* Responsive ajustes */
+
 @media (max-width: 768px) {
   .boton-comprar-responsive {
     width: 100%;
@@ -358,7 +358,7 @@ footer a {
 }
 
 
-/* 📊 Tablets y pantallas medianas */
+
 @media only screen and (max-width: 1024px) {
   body {
     font-size: 16px;
@@ -374,7 +374,7 @@ footer a {
   }
 }
 
-/* 💻 Pantallas grandes (laptops y PC) */
+
 @media only screen and (min-width: 1025px) {
   body {
     font-size: 18px;

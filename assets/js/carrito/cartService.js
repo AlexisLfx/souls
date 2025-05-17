@@ -1,19 +1,19 @@
-// proyectT/assets/js/carrito/cartService.js
+
 
 const cuentaCarritoElement = document.getElementById("cuenta-carrito");
 const keyLocalstorage = "productos";
 
 /** 🛒 Agrega un producto al carrito */
-function agregarAlCarrito(producto, selectedSize = null) { // Added selectedSize parameter
+function agregarAlCarrito(producto, selectedSize = null) { 
     let memoria = JSON.parse(localStorage.getItem(keyLocalstorage)) || [];
-    const indiceProducto = memoria.findIndex(item => item.id === producto.id && item.size === selectedSize); // Check for ID and size
+    const indiceProducto = memoria.findIndex(item => item.id === producto.id && item.size === selectedSize); 
     let cantidadProductoFinal = 1;
 
     if (indiceProducto === -1) {
-        // If product with specific size not found, add new entry
+        
         memoria.push({ ...producto, cantidad: 1, size: selectedSize });
     } else {
-        // If product with specific size found, increment quantity
+        
         memoria[indiceProducto].cantidad++;
         cantidadProductoFinal = memoria[indiceProducto].cantidad;
     }
@@ -28,12 +28,12 @@ function agregarAlCarrito(producto, selectedSize = null) { // Added selectedSize
 }
 
 /** 🔽 Resta una unidad de un producto del carrito */
-// Update restarAlCarrito if you need to handle sizes there as well, for example, if items with different sizes are treated as distinct cart entries.
-// For now, assuming size makes items distinct, so removing one specific item if its quantity becomes 0.
-function restarAlCarrito(producto) { // You might need to pass size here too if items are distinct by size
+
+
+function restarAlCarrito(producto) { 
     let memoria = JSON.parse(localStorage.getItem(keyLocalstorage)) || [];
-    // Find the index based on ID and potentially size if your cart treats same product with different sizes as distinct items
-    const indiceProducto = memoria.findIndex(item => item.id === producto.id && item.size === producto.size); // Assuming producto object passed to restarAlCarrito contains its size
+    
+    const indiceProducto = memoria.findIndex(item => item.id === producto.id && item.size === producto.size); 
 
     if (indiceProducto === -1) return 0;
 

@@ -1,4 +1,4 @@
-// proyectT/assets/js/carrito/cart.js
+
 
 const contenedorTarjetas = document.getElementById("cart-container");
 const cantidadElement = document.getElementById("cantidad");
@@ -24,8 +24,8 @@ function crearTarjetasProductosCarrito() {
       let controlesProductoHTML = "";
       const rutaImagen = producto.img;
 
-      // Muestra la talla si está disponible
-      const tallaHTML = producto.size ? `<span class="product-size">Talla: ${producto.size}</span>` : ''; // Clase añadida para posible estilizado
+      
+      const tallaHTML = producto.size ? `<span class="product-size">Talla: ${producto.size}</span>` : ''; 
 
       if (esPaginaDePago) {
         controlesProductoHTML = `
@@ -99,26 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Funciones de ejemplo que podrías tener (asegúrate de que existan o elimina las llamadas):
-// function revisarMensajeVacio() {
-//   const productos = JSON.parse(localStorage.getItem(keyLocalstorage)) || [];
-//   if (carritoVacioElement) {
-//       carritoVacioElement.style.display = (productos && productos.length > 0) ? "none" : "block";
-//   }
-// }
 
-// function actualizarTotales() {
-//   const productos = JSON.parse(localStorage.getItem(keyLocalstorage)) || [];
-//   let cantidadTotal = 0;
-//   let precioTotal = 0;
-//   productos.forEach(p => {
-//       cantidadTotal += p.cantidad;
-//       precioTotal += parseFloat(p.precio) * p.cantidad;
-//   });
-//   if(cantidadElement) cantidadElement.innerText = cantidadTotal;
-//   if(precioElement) precioElement.innerText = `$${precioTotal.toFixed(2)}`;
-//   // Podrías necesitar mostrar/ocultar el contenedor de totales
-//    if (totalesContainer) {
-//        totalesContainer.style.display = productos.length > 0 ? 'block' : 'none';
-//    }
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

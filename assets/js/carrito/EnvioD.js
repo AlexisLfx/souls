@@ -1,6 +1,6 @@
 function actualizarFechaEnvio(tipo = "standard") {
   const fechaActual = new Date();
-  const diasEnvio = tipo === "express" ? 3 : 7; // 3 días para envío express, 7 para estándar
+  const diasEnvio = tipo === "express" ? 3 : 7; 
   fechaActual.setDate(fechaActual.getDate() + diasEnvio);
 
   const opcionesFecha = {

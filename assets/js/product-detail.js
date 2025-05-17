@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function displayProductDetails(product, categoryId) {
     document.getElementById('product-name-title').textContent = product.nombre;
-    document.getElementById('main-product-image').src = product.img; // Ensure product.img has correct path relative to product-detail.html
+    document.getElementById('main-product-image').src = product.img; 
     document.getElementById('main-product-image').alt = product.nombre;
     document.getElementById('product-description').textContent = product.descripcion;
     document.getElementById('product-price').textContent = `$${parseFloat(product.precio).toFixed(2)}`;
@@ -79,7 +79,7 @@ function displayProductDetails(product, categoryId) {
                 selectedSize = sizeSelect.value;
             }
         }
-        // Ensure agregarAlCarrito is accessible from this scope
+
         if (typeof agregarAlCarrito === 'function') {
             agregarAlCarrito(product, selectedSize);
              alert(`${product.nombre} ${selectedSize ? '(Talla: ' + selectedSize + ')' : ''} agregado al carrito.`);

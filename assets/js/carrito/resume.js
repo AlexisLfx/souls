@@ -10,7 +10,7 @@ function actualizarResumenPedido() {
     const impuestos = subtotal * 0.16;
     const total = subtotal + envio;
 
-    // Mostrar los valores con 2 decimales
+    
     document.getElementById("subtotal").innerText = `$${subtotal.toFixed(2)}`;
     document.getElementById("envio").innerText = `$${envio.toFixed(2)}`;
     document.getElementById("impuestos").innerText = `$${impuestos.toFixed(2)} de impuestos`;
