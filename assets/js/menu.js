@@ -281,15 +281,15 @@ document.getElementById("verMenospolos").addEventListener("click", function() {
 
 //mangass
 document.getElementById("verMasmangass").addEventListener("click", function() {
-    mostradosmangass = mangass.length; // CORREGIDO: Actualiza la variable de conteo.
-    mostrarProductos("listamangass", mangass, mostradosmangass, "listamangass"); // Asegúrate que el primer y último parámetro sean el ID correcto del contenedor.
+    mostradosmangass = mangass.length; 
+    mostrarProductos("listamangass", mangass, mostradosmangass, "listamangass"); 
     this.style.display = "none";
     document.getElementById("verMenosmangass").style.display = "inline-block";
 });
 
 document.getElementById("verMenosmangass").addEventListener("click", function() {
-    mostradosmangass = 4; // CORREGIDO: Actualiza la variable de conteo.
-    mostrarProductos("listamangass", mangass, mostradosmangass, "listamangass"); // Asegúrate que el primer y último parámetro sean el ID correcto del contenedor.
+    mostradosmangass = 4; 
+    mostrarProductos("listamangass", mangass, mostradosmangass, "listamangass"); 
     this.style.display = "none";
     document.getElementById("verMasmangass").style.display = "inline-block";
 });
