@@ -2906,13 +2906,14 @@ main {
 		border: solid 1px #e5e5e5;
 		border-radius: 4px;
 		background: #0f0d09;
-		background: rgba(16, 10, 86, 0.965);
+		background: rgba(0, 0, 0, 0.965);
 		box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
 		padding: 0.75em 0 0.5em 0;
 		min-width: 12em;
 		margin-top: calc(-0.5em + 1px);
 		margin-left: -2px;
 		list-style: none;
+		border-radius: 2vh;
 	}
 
 		.dropotron.level-0 {
