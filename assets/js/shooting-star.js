@@ -502,3 +502,4 @@ class Editor {
     if (lineBottom > visibleBottom) editor.scrollTop = lineBottom - editor.clientHeight
   }
 }
+

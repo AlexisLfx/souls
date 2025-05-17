@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/pago.css">
+  <link rel="stylesheet" href="./assets/css/cart.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+	<title>Souls pago</title>
+</head>
+<body>
+  <header>
+	<section id="headerS">
+	<nav>
+			<div class="logo-container">
+			<a href="./cart.html"><img src="./images/soulsback.jpg" alt="Logo" id="logo"><a class="logo-souls">SOULS</a></a>
+		</div>
+
+	<section>
+		</header>
+	<main>
+		<section id="center-contain">
+		<section id="cart-container">
+		</section>
+		<div class="resumen-pedido">
+			<h3>Resumen del Pedido</h3>
+			<p><strong>Subtotal:</strong> <span id="subtotal">$0.00</span></p>
+			<p><strong>Envío Standard:</strong> <span id="envio">$0.00</span></p>
+			<p><strong>Total:</strong> <span id="total">$0.00</span></p>
+			<p><strong>Incluye:</strong> <span id="impuestos">$0.00 de impuestos</span></p>
+		  </div>
+		   
+		  <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+			<button onclick="history.back()" class="button alt">Regresar al Carrito</button>
+		  <div id="paypal-button-container"></div>
+		  <p id="result-message"></p>
+  
+		 
+		  <!-- Initialize the JS-SDK -->
+		  <script
+			  src="https://www.paypal.com/sdk/js?client-id=Ab3gjBbtGXPDwIxh0mGg5PTDKBVbwPrEsXXIVmzYsK7zXhNUnnTI-R8eqLVeG7hgz3VdQQ0uS4eZcukl&buyer-country=US&currency=USD&components=buttons&enable-funding=venmo,paylater,card"
+			  data-sdk-integration-source="developer-studio"
+		  ></script>
+		  <script src="/paypal/app.js"></script>
+	</section>
+</main>
+
+<footer>
+  <div id="copyright" class="container">
+	  <ul class="links" style="text-align: center; list-style: none; padding: 0;">
+		<li>&copy; <a> SOULS. Todos los derechos reservados.</a></li>
+	  </ul>
+	</div>
+  </footer>
+  
+  <script src="./assets/js/carrito/cartService.js" defer></script>
+  <script src="./assets/js/carrito/cart.js" defer></script>
+  <script src="./assets/js/carrito/resume.js"defer></script>
+	<script src="./paypal/app.js" ></script>
+	<script src="./paypal/server.js" ></script>
+</body>
+</html>

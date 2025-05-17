@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>SOULS	</title>
+	<title>SOULS</title>
 	
 
 		<!-- Enlace a hojas de estilo -->
@@ -12,20 +12,44 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		</head>
 		<body class="homepage is-preload">
+			<div class="menu-mobile"> <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="visually-hidden">Menú</span>
+			</button>
+			<nav class="menu-principal" id="menu-principal"> <ul>
+				<ul>
+					<li>
+						<a class="icon" href="store.html"><h3> TIENDA</h3></a>
+					</li>
+					<li>
+						<a class="icon" href="about_us.html"><h3> SOBRE NOSOTROS</h3></a>
+					</li>
+					<li class="icon">
+						<a href="#footer"> <h3>CONTACTO</h3></a>
+					</li>
+					
+							</li>
+						</ul>
+					</li>
+				</ul>
+				</ul>
+			</nav>
+		</div>
 				<!--boton flotante-->
 				<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=bEyDylwm9UqfNf8N_13aN28VgCnkyyBBkNgN0GV7w5dUNVlHOVBUT0hWM05XTjU0TFpDRzNQN1pIUy4u" class="btn-flotante">
 					<img src="images/soulsback.jpg" alt="Icono">
 				</a>
-
+			
 	<!-- Header -->
 	<section id="header">
-		<div class="background-container">
 			<canvas id="canvas"></canvas>
 			<div class="container">
 				<!--titulo-->
-			<div class="animated-text">
+			<div class="animated-text">		
 				<h6>Despierta tu instinto. Domina tu destino </h6>
-				<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=bEyDylwm9UqfNf8N_13aN28VgCnkyyBBkNgN0GV7w5dUNVlHOVBUT0hWM05XTjU0TFpDRzNQN1pIUy4u" class="btn-dos">Despierta tu esencia	</a>	
+				<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=bEyDylwm9UqfNf8N_13aN28VgCnkyyBBkNgN0GV7w5dUNVlHOVBUT0hWM05XTjU0TFpDRzNQN1pIUy4u" class="btn-dos">Despierta tu esencia	</a>		  
 			</div>
 		</div>
 				<!-- Navegación -->
@@ -37,29 +61,41 @@
 							</a>
 						</li>
 						<li>
-							<a class="icon" href="store.html"><span> TIENDA</span></a>
+							<li>
+								<a href="store.html" class="icon"><h3>Tienda</h3></a> <ul>
+									<li><a href="store.html#GORRAS">Gorras</a></li>
+									<li><a href="store.html#HODDIES">Hoodies</a></li> <li><a href="store.html#PLAYERAS">Playeras</a></li>
+									<li><a href="store.html#HOODIESZ">Hoodies Zipper</a></li>
+									<li><a href="store.html#SPORTSHIRT">Sportshirts</a></li>
+									<li><a href="store.html#COMPRESS">Compress</a></li>
+									<li><a href="store.html#HOODIEBRAZO">Hoodies sin Manga</a></li> <li><a href="store.html#REZAQUE">Rezaque</a></li>
+									<li><a href="store.html#POLOS">Polos</a></li>
+									<li><a href="store.html#MANGASS">Mangas</a></li> <li><a href="store.html#NINOS">Niños</a></li>     <li><a href="store.html#MOCHILAS">Mochilas</a></li>
+									<li><a href="store.html#MOCHILASCRUZ">Mochilas Cruzadas</a></li>
+									<li><a href="store.html#TAZAS">Tazas</a></li>
+									<li><a href="store.html#TERMOS">Termos</a></li>
+								</ul>
+							</li>
 						</li>
 						<li>
-							<a class="icon" href="about_us.html"><span> SOBRE NOSOTROS</span></a>
+							<a class="icon" href="about_us.html"><h3> SOBRE NOSOTROS</h3></a>
 						</li>
 					<!--  <li>
 							<a class="icon" href="no-sidebar.html"><span> COMUNIDAD</span></a>
 						</li>-->
-						<li>
-							<a href="#" class="icon"><span> CONTACTO</span></a>
-							<ul>
-								<li><a href="#">Lorem ipsum dolor</a></li>
-								<li><a href="#">Magna phasellus</a></li>
-								<li><a href="#">Etiam dolore nisl</a></li>
-								<li>
-									<a href="#">Phasellus consequat</a>
-									<ul>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-										<li><a href="#">Phasellus consequat</a></li>
-									</ul>
+						<li class="icon">
+							<a href="#"> <h3>CONTACTO</h3></a>
+							<ul class="submenu">
+								<li><a href="https://wa.me/523171209545">WHATSAPP</a></li>
+								<br>
+								<li><a href="mailto:fregosoalexis116@gmail.com">CORREO</a></li>
+								<br>
+								<li><a href="https://www.instagram.com/alexis_ctrl.1">INSTAGRAM</a></li>
+							</ul>
+							
+						</li>
+						
 								</li>
-								<li><a href="#">Veroeros feugiat</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -69,12 +105,13 @@
 						<form id="searchForm" onsubmit="search(event)">
 							<input type="text" id="searchInput" class="search-bar" placeholder="Buscar...">
 							<button class="search-button" type="submit">
-								<i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
+								<i class="fas fa-search"></i>
 							</button>
 						</form>
 					</div>
+					
 				</nav>
-				<h1>------------------------------------------------------------------------------------------------------------------------------------</h1>
+				
 				<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" oninput="render()"></textarea>
 					<pre id="error"></pre>
 					<div id="indicator"></div>
@@ -86,115 +123,71 @@
 					</div>
 					</div>
 					<script type="x-shader/x-fragment"> 	#version 300 es
-					precision highp float;
-					out vec4 O;
-					uniform vec2 resolution;
-					uniform float time;
-					uniform sampler2D pebbles;
-					#define FC gl_FragCoord.xy
-					#define T time
-					#define R resolution
-					#define MN min(R.x,R.y)
-					// Returns a pseudo random number for a given point (white noise)
-					float rnd(vec2 p) {
-					p=fract(p*vec2(12.9898,78.233));
-					p+=dot(p,p+34.56);
-					return fract(p.x*p.y);
-					}
-					// Returns a pseudo random number for a given point (value noise)
-					float noise(in vec2 p) {
-					vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f);
-					float
-					a=rnd(i),
-					b=rnd(i+vec2(1,0)),
-					c=rnd(i+vec2(0,1)),
-					d=rnd(i+1.);
-					return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
-					}
-					// Returns a pseudo random number for a given point (fractal noise)
-					float fbm(vec2 p) {
-					float t=.0, a=1.; mat2 m=mat2(1.,-.5,.2,1.2);
-					for (int i=0; i<5; i++) {
-						t+=a*noise(p);
-						p*=2.*m;
-						a*=.5;
-					}
-					return t;
-					}
-					float clouds(vec2 p) {
-					float d=1., t=.0;
-					for (float i=.0; i<3.; i++) {
-						float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);
-						t=mix(t,d,a);
-						d=a;
-						p*=2./(i+1.);
-					}
-					return t;
-					}
-					void main(void) {
-					vec2 uv=(FC-.5*R)/MN,st=uv*vec2(2,1);
-					vec3 col=vec3(0);
-					float bg=clouds(vec2(st.x+T*.5,-st.y));
-					uv*=1.-.3*(sin(T*.2)*.5+.5);
-					for (float i=1.; i<12.; i++) {
-						uv+=.1*cos(i*vec2(.1+.01*i, .8)+i*i+T*.5+.1*uv.x);
-						vec2 p=uv;
-						float d=length(p);
-						col+=.00125/d*(cos(sin(i)*vec3(1,2,3))+1.);
-						float b=noise(i+p+bg*1.731);
-						col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));
-						col = mix(col, vec3(bg * 0.1, bg * 0.1, bg * 0.3), d);
-					}
-					O=vec4(col,1);
-					}
-					</script>
+						precision highp float;
+						out vec4 O;
+						uniform vec2 resolution;
+						uniform float time;
+						uniform sampler2D pebbles;
+						#define FC gl_FragCoord.xy
+						#define T time
+						#define R resolution
+						#define MN min(R.x,R.y)
+						// Returns a pseudo random number for a given point (white noise)
+						float rnd(vec2 p) {
+						p=fract(p*vec2(12.9898,78.233));
+						p+=dot(p,p+34.56);
+						return fract(p.x*p.y);
+						}
+						// Returns a pseudo random number for a given point (value noise)
+						float noise(in vec2 p) {
+						vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f);
+						float
+						a=rnd(i),
+						b=rnd(i+vec2(1,0)),
+						c=rnd(i+vec2(0,1)),
+						d=rnd(i+1.);
+						return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
+						}
+						// Returns a pseudo random number for a given point (fractal noise)
+						float fbm(vec2 p) {
+						float t=.0, a=1.; mat2 m=mat2(1.,-.5,.2,1.2);
+						for (int i=0; i<5; i++) {
+							t+=a*noise(p);
+							p*=2.*m;
+							a*=.5;
+						}
+						return t;
+						}
+						float clouds(vec2 p) {
+						float d=1., t=.0;
+						for (float i=.0; i<3.; i++) {
+							float a=d*fbm(i*10.+p.x*.2+.2*(1.+i)*p.y+d+i*i+p);
+							t=mix(t,d,a);
+							d=a;
+							p*=2./(i+1.);
+						}
+						return t;
+						}
+						void main(void) {
+						vec2 uv=(FC-.5*R)/MN,st=uv*vec2(2,1);
+						vec3 col=vec3(0);
+						float bg=clouds(vec2(st.x+T*.5,-st.y));
+						uv*=1.-.3*(sin(T*.2)*.5+.5);
+						for (float i=1.; i<12.; i++) {
+							uv+=.1*cos(i*vec2(.1+.01*i, .8)+i*i+T*.5+.1*uv.x);
+							vec2 p=uv;
+							float d=length(p);
+							col+=.00125/d*(cos(sin(i)*vec3(1,2,3))+1.);
+							float b=noise(i+p+bg*1.731);
+							col+=.002*b/length(max(p,vec2(b*p.x*.02,p.y)));
+							col = mix(col, vec3(bg * 0.1, bg * 0.1, bg * 0.3), d);
+						}
+						O=vec4(col,1);
+						}
+						</script>
 				</div> 
+				<script src="assets/js/search.js" defer></script>
 	</section>
-
-	<script>
-		function search(event) {
-			event.preventDefault();
-	
-			const query = document.getElementById("searchInput").value.trim().toLowerCase();
-			if (query === "") {
-				alert("Por favor, ingresa un término de búsqueda.");
-				return;
-			}
-	
-			// Diccionario de búsqueda con términos clave y sus enlaces correspondientes
-			const pages = {
-				"tienda": "store.html",
-				"sobre nosotros": "about_us.html",
-				"comunidad": "community.html", // Si tienes esta página
-				"inicio": "index.html",
-				"contacto": "#contacto" // Puedes poner un ID o cambiar por una URL específica
-			};
-	
-			// Verificar si el término de búsqueda coincide con alguna página
-			for (const key in pages) {
-				if (query.includes(key)) {
-					window.location.href = pages[key];
-					return;
-				}
-			}
-	
-			// Si no coincide con ninguna página, busca dentro del contenido actual
-			const elements = document.querySelectorAll("body *"); 
-			let found = false;
-	
-			elements.forEach(element => {
-				if (element.innerText && element.innerText.toLowerCase().includes(query)) {
-					element.scrollIntoView({ behavior: "smooth", block: "center" });
-					found = true;
-					return;
-				}
-			});
-	
-			if (!found) {
-				alert("No se encontró ninguna coincidencia.");
-			}
-		}
-	</script>
 	</body>
 	</html>
 
@@ -209,40 +202,43 @@
 
 								<!-- Feature -->
 									<section>
-										<a href="#" class="image featured"><img src="images/gorras/dragon.jpeg" alt="" /></a>
+										<a href="#" class="image featured"><img src="images/presentt.WebP" alt="" /></a>
 										<header>
 											<h4>GORRAS ESPECIALES PARA SU PERSONALIDAD</h4>
 										</header>
-										<p>This is <strong>Strongly Typed</strong>, a free, fully responsive site template
-										by <a href="http://html5up.net">HTML5 UP</a>. Free for personal and commercial use under the
-										<a href="http://html5up.net/license">CCA 3.0 license</a>.</p>
+										<p>Las gorras <a>Souls </a>>son más que un accesorio. Son símbolo, visión y carácter. 
+											  Inspiradas en los clanes, diseñadas para <strong>líderes</strong> .
+											 Llévala con orgullo, conecta con tu manada y marca territorio allá donde vayas.</p>
 									</section>
 
 							</div>
+							
 							<div class="col-4 col-6-medium col-12-small">
 
 								<!-- Feature -->
 									<section>
-										<a href="#" class="image featured"><img src="images/hoddies/present.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="images/log.png" alt="" /></a>
+										<header>
+											<h4>CONJUNTOS ESPECIALES PARA SU PERSONALIDAD</h4>
+										</header>
+										<p>Las playeras <a>SOULS</a> <STRONG>son la representación de tu esencia.</STRONG>Con un diseño que fusiona estilo y fuerza,
+											 cada prenda refleja la identidad de tu clan y tu espíritu indomable.
+											 Perfectas para quienes viven con pasión y no temen destacarse.</p>
+									</section>
+
+							</div>
+
+							<div class="col-4 col-6-medium col-12-small">
+
+								<!-- Feature -->
+									<section>
+										<a href="#" class="image featured"><img src="images/present.WebP" alt="" /></a>
 										<header>
 											<h4>HODDIES ESPECIALES PARA SU PERSONALIDAD</h4>
 										</header>
-										<p><a href="http://html5up.net">HTML5 UP</a> is a side project of <a href="http://twitter.com/ajlkn">AJ’s</a> (= me).
-										I started it as a way to both test my responsive tools and sharpen up my coding
-										and design skills a bit.</p>
-									</section>
-
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-
-								<!-- Feature -->
-									<section>
-										<a href="#" class="image featured"><img src="images/caps.jpg" alt="" /></a>
-										<header>
-											<h4>PLAYERAS ESPECIALES PARA SU PERSONALIDAD</h4>
-										</header>
-										<p><strong>Responsive Tools</strong> is a simple set of tools for building responsive
-										sites and apps. All of my templates at <a href="http://html5up.net">HTML5 UP</a> are built using these tools.</p>
+										<p><a>SOULS</a> Hoodies no es solo ropa. 
+											Es actitud, legado y pertenencia. Cada diseño canaliza la energía de un depredador y proyecta
+											tu identidad al mundo. Hechas para destacar, inspirar y unir a los que caminan con propósito.</p>
 									</section>
 
 							</div>
@@ -284,19 +280,24 @@
 									<!-- Post -->
 										<article class="box post">
 											<header>
-												<h4><a href="#"><strong>SOULS </strong> es una comunidad dinámica donde sus miembros se agrupan en clanes inspirados en depredadores, desarrollando sus fortalezas y valores en un entorno de <strong>creciemiento y colaboración</strong> .<br/><br>
+												<h3><a><strong>SOULS </strong> es una comunidad dinámica donde sus miembros se agrupan en clanes inspirados en depredadores,
+													 desarrollando sus fortalezas y valores en un entorno de <strong>creciemiento y colaboración</strong> .<h3>
 											</header>
-											<a href="#" class="image featured"><img src="images/bannerdrg.jpg" alt="" /></a>
-											<h3>I mean isn't it possible?</h3>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-											Curabitur leo nibh, rutrum eu malesuada in tristique.</p>
+											<a class="image featured"><img src="images/bannerdrg.jpg" alt="" /></a>
+											<h3>Como es esto posible?</h3>
+											<p>SOULS nació con una visión clara: <strong>unir a personas con un propósito común</strong>, conectados por el deseo de <strong>crecer,
+												aprender y desafiarse a sí mismos</strong>. En un mundo lleno de distracciones, buscamos crear un espacio donde cada
+												  miembro pueda <strong>encontrar su verdadera fuerza</strong>. Esta comunidad está formada por individuos decididos a <STRONG>trascender 
+													límites</STRONG> y alcanzar su máximo potencial. Juntos, formamos una red de apoyo, una fuerza colectiva que cree en el 
+												  poder del <strong>trabajo en equipo, la dedicación y la mejora constante</strong>.
+												Cada uno de nosotros es una pieza esencial en el todo, un miembro único pero parte de algo más grande. 
+												Aquí, no solo te conviertes en la <strong>mejor versión de ti mismo</strong>, sino que también <strong>inspiras y elevas a los demás</strong> a tu alrededor.</p>
+
+												<h4>En <strong>SOULS</strong>, no hay límites para lo que puedes alcanzar. El único obstáculo es el que tú mismo te pongas.
+													 Aquí, tus <strong>fortalezas</strong> se multiplican a través de la comunidad, y tu crecimiento personal se convierte en una fuerza
+													  colectiva que transforma no solo tu vida, sino también la de aquellos a tu alrededor. Levántate, desafía tus miedos
+													   y únete a nosotros en este viaje. El futuro pertenece a aquellos que se atreven a romper barreras y a caminar con propósito. 
+													   ¡Es hora de mostrar al mundo de qué estás hecho!</h4>
 											<!--<ul class="actions">
 												<li><a href="#" class="button icon solid fa-file">Continue Reading</a></li>
 											</ul>-->
@@ -348,11 +349,14 @@
 													<!-- Excerpt -->
 														<article class="box excerpt">
 															<header>
-																<span class="date">July 30</span>
-																<h3><a href="#">CLANES</a></h3>
+																<span class="date">Abril</span>
+																<h3><a href="#">Liderazgo y Determinación</a></h3>
 															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+															<p><a>integrar</a> a aquellos que buscan desarrollar habilidades de liderazgo,
+																toma de decisiones y determinación. Los miembros aprenden a liderar con valentía,
+																 inspirar a su equipo y mantener un enfoque resolutivo ante cualquier desafío. 
+																 Es ideal para quienes desean fortalecer su capacidad de tomar el control y marcar
+																  la diferencia en cualquier contexto.</p>
 														</article>
 
 												</li>
@@ -361,11 +365,13 @@
 													<!-- Excerpt -->
 														<article class="box excerpt">
 															<header>
-																<span class="date">July 28</span>
-																<h3><a href="#">CLANES</a></h3>
+																<span class="date">Abril</span>
+																<h3><a href="#">Estrategia y Visión</a></h3>
 															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+															<p><a>Estrategia y Visión</a> es el espacio para aquellos que desean afinar su visión estratégica.
+																 Aquí, los miembros se entrenan para pensar con claridad, desarrollar una mente analítica
+																  y aprender a tomar decisiones calculadas. Este clan está dirigido a quienes buscan comprender 
+																  el panorama completo y actuar con precisión para alcanzar sus metas a largo plazo.</p>
 														</article>
 
 												</li>
@@ -375,11 +381,13 @@
 													<!-- Excerpt -->
 														<article class="box excerpt">
 															<header>
-																<span class="date">July 24</span>
-																<h3><a href="#">CLANES</a></h3>
+																<span class="date">Abril</span>
+																<h3><a href="#">Resiliencia y Adaptabilidad</a></h3>
 															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+															<p><a>Desarrollar resiliencia y adaptabilidad</a> en un mundo en constante cambio. Los miembros aprenden a superar
+																 obstáculos con fuerza interior, a adaptarse rápidamente a nuevas situaciones y a mantener un enfoque 
+																 constante en el crecimiento personal. Aquí, se cultiva la capacidad de enfrentar retos y transformarlos
+																  en oportunidades.</p>
 														</article>
 
 												</li>
@@ -390,40 +398,6 @@
 										<section>
 											<ul class="divided">
 												<li>
-
-													<!-- Highlight 
-														<article class="box highlight">
-															<header>
-																<h3><a href="#">Something of note</a></h3>
-															</header>
-															<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
-															</ul>
-														</article>
-
-												</li>
-												<li>
-
-													- Highlight 
-														<article class="box highlight">
-															<header>
-																<h3><a href="#">Something of less note</a></h3>
-															</header>
-															<a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
-															<p>Phasellus sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button icon solid fa-file">Learn More</a></li>
-															</ul>
-														</article>-->
-
 												</li>
 											</ul>
 										</section>
@@ -434,28 +408,39 @@
 					</div>
 				</section>
 
-			<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<header>
-								<h2>PREGUNTAS O COMENTARIOS <strong>CONTACTENOS:</strong></h2>
-							</header>
-							<div class="row">
-								<div class="col-6 col-12-medium">
-									<section> 
-										<form action="https://formsubmit.co/soulsmkotw@gmail.com" method="POST">
-											<label for="name">Tu Nombre:</label>
-											<input type="text" name="name" >
-											
-											<label for="email">Tu Email:</label>
-											<input type="email"  name="email" >
-											
-											<label for="subject">Asunto:</label>
-											<input type="text" name="subject">
-											
-											<button type="submit">Enviar</button>
-										</form>
-									</section>
+				<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<header>
+							<h2>PREGUNTAS O COMENTARIOS <strong>CONTACTENOS:</strong></h2>
+						</header>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<section> 
+									<form id="form">
+										<div class="field">
+										  <label for="name">name</label>
+										  <input type="text" name="name" id="name">
+										</div>
+										<div class="field">
+										  <label for="email">email</label>
+										  <input type="text" name="email" id="email">
+										</div>
+										<div class="field">
+										  <label for="message">message</label>
+										  <input type="text" name="message" id="message">
+										</div>
+										
+										<input type="submit" id="button" value="Send Email" >
+									</form>
+									
+									<script type="text/javascript"
+									  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+									
+									<script type="text/javascript">
+									  emailjs.init('AclLMwORysxN61ZuK')
+									</script>
+
 								
 							</div>
 							<div class="col-6 col-12-medium">
@@ -516,7 +501,7 @@
 		
 		<div id="copyright" class="container">
 			<ul class="links">
-				<li>&copy; ©Copyright 2025 SOULS.  All rights reserved. </li><li>Design: <a href="">Ctrl_1</a></li>
+				<li>&copy; Copyright 2025 SOULS.  All rights reserved. </li><li>Design: <a href="">Ctrl_1</a></li>
 			</ul>
 		</div>
 
@@ -528,6 +513,9 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/shooting-star.js"></script>
+			<script src="assets/js/search.js"></script>
+			<script src="assets/js/email.js"></script>
+				
 
 
 	</body>

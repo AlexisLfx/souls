@@ -20,24 +20,22 @@
 
 html,
 body {
-  width: 50vh;
-  height: 50vh;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 body {
-  display: inline-block;
-  height: 50vh;
+  display: center;
   grid-template-rows: calc(20dvh - 2rem) 2rem;
   font-family: system-ui, sans-serif;
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
 }
 
 .background-animation {
-  position: absolute;
+  position: fixed; /* Changed to fixed to stay behind content */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Match the initial height, adjust as needed */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -53,26 +51,27 @@ canvas,
 
 #canvas {
   display: inline-block;
-  position: block;
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
   height: 50vh;
-  z-index: 0;
+  z-index: -1;
 }
 
 .animated-text {
   position: absolute;
-  top: 100%;
-  left: 100%;
-  transform: translate(-100%, -100%);
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for centering */
   text-align: center;
-  z-index: 1; 
+  z-index: -1;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
   opacity: 0;
   animation: fadeInUp 1.5s ease-in-out forwards;
+  width: 90%; /* Adjust width as needed */
 }
 
 .animated-text h3 {
@@ -80,7 +79,7 @@ canvas,
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.animated-text .button {
+.animated-text.button {
   display: inline-block;
   background-color: #c28a2d; /* Color dorado */
   color: white;
@@ -92,7 +91,7 @@ canvas,
   transition: background 0.3s ease-in-out;
 }
 
-.animated-text .button:hover {
+.animated-text.button:hover {
   background-color: #a8741a;
 }
 
@@ -105,111 +104,24 @@ canvas,
 .editor:focus {
   outline: none;
 }
-#error {
-  grid-row: 2;
-  grid-column: 1;
-  margin: 0;
-  padding-block: 0;
-  padding-top: .5em;
-  color: firebrick;
-  overflow: auto;
-  text-wrap: pretty;
-}
-
-#indicator {
-  visibility: hidden;
-  position: absolute;
-  top: calc(var(--top, 0px) - var(--scroll-top, 0px));
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid firebrick;
-  transform: translateY(-25%);
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-}
-.editor,
-.overlay {
-  font-size: 1rem;
-  line-height: 1.2;
-  white-space: pre;
-}
-#controls {
-  position: fixed;
-  top: 1em;
-  right: 2em;
-}
-.controls {
-  position: relative;
-  display: flex;
-  gap: 1.5em;
-  padding: .5em 1.25em;
-  background: #1111;
-  border-radius: 4px;
-}
-.controls::before,
-.controls::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  transform: scale(.95);
-  border-radius: inherit;
-  opacity: 0;
-}
-.controls::before {
-  background: #aef;
-  animation: pulse 2s infinite;
-}
-.controls::after {
-  background: #fefefe66;
-  transition: transform 200ms ease-in-out;
-}
-.controls:hover::before,
-.controls:hover::after {
-  opacity: 1;
-}
-.controls:hover::before {
-  transform: scale(.98);
-  filter: blur(2px);
-}
-.controls:hover::after {
-  transform: scale(1.025, 1.1);
-}
-.controls:hover {
-  background: #111f;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.0125);
-  }
   auto {
     transform: scale(1);
   }
-}
+
 .hidden {
-  display: none !important;
+  display: none!important;
 }
 .opaque {
-  opacity: 1 !important;
-  background: #111 !important;
+  opacity: 1!important;
+  background: #111!important;
 }
 input {
   all: unset;
-  opacity: .2;
+  opacity:.2;
   filter: saturate(0) invert(1);
   cursor: pointer;
   transition: opacity 200ms ease-in-out;
-  padding: .25em .5em;
+  padding:.25em.5em;
 }
 input:hover {
   opacity: 1;
@@ -246,23 +158,34 @@ input:hover {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%); /* Start a bit higher */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
 @media (max-width: 1024px) {
-  .animated-text {
-    font-size: 2rem;
+ .animated-text {
+    font-size: 1.8rem; /* Adjusted font size */
   }
 }
 
 @media (max-width: 768px) {
-  .animated-text {
-    font-size: 1.5rem;
+ .animated-text {
+    font-size: 1.4rem; /* Adjusted font size */
   }
 }
 
 @media (max-width: 480px) {
-  .animated-text {
-    font-size: 1.2rem;
+ .animated-text {
+    font-size: 1rem; /* Adjusted font size */
   }
-  .animated-text .button {
-    padding: 0.6rem 1rem;
+ .animated-text.button {
+    padding: 0.5rem 1rem; /* Adjusted button padding */
   }
 }

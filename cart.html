@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/cart.css">
+  <link rel="stylesheet" href="./assets/css/pago.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=Ab3gjBbtGXPDwIxh0mGg5PTDKBVbwPrEsXXIVmzYsK7zXhNUnnTI-R8eqLVeG7hgz3VdQQ0uS4eZcukl&components=YOUR_COMPONENTS"></script>	
+
+	<title>Carrito</title>
+</head>
+<body>
+	<a href="https://wa.me/523171209545" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Chatea con nosotros en WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+</a>
+	
+  <header>
+	<section id="headerS">
+		<nav>
+			<div class="logo-container">
+			<a href="./index.html"><img src="./images/soulsback.jpg" alt="Logo" id="logo"><a class="logo-souls"><h2>SOULS</h2></a></a>
+			<!-- Barra de búsqueda alineada a la derecha -->
+
+		</div>
+		
+			
+			
+
+</nav>
+	</header>
+	<main>
+		<!--<p id="carrito-vacio">Ups! El carrito está vacío, <a href="./pago.html">elige algunos productos</a></p>-->
+	  
+		<!-- NUEVO CONTENEDOR PARA 2 COLUMNAS -->
+		<div class="checkout-grid">
+				<form id="form">
+				<div class="field">
+				  <label for="nombre">NOMBRE</label>
+				  <input type="text" name="nombre" id="nombre">
+				</div>
+				<div class="field">
+				  <label for="email">CORREO</label>
+				  <input type="text" name="email" id="email">
+				</div>
+				<div class="field">
+				  <label for="telefono">TELEFONO</label>
+				  <input type="text" name="telefono" id="telefono">
+				</div>
+				<div class="field">
+				  <label for="direccion">DIRECCION</label>
+				  <input type="text" name="direccion" id="direccion">
+				</div>
+				<div class="field">
+				  <label for="info">INFORMACION (opcional)</label>
+				  <input type="text" name="info" id="info">
+				</div>
+				<div class="field">
+				  <label for="codigo_postal">CODIGO_POSTAL</label>
+				  <input type="text" name="codigo_postal" id="codigo_postal">
+				</div>
+				<div class="field">
+				  <label for="pais">PAIS</label>
+				  <input type="text" name="pais" id="pais">
+				</div>
+				<div class="field">
+				  <label for="estado">ESTADO</label>
+				  <input type="text" name="estado" id="estado">
+				</div>
+				<div class="field">
+				  <label for="ciudad">CIUDAD</label>
+				  <input type="text" name="ciudad" id="ciudad">
+				</div>
+				<input type="submit" id="boton" value="Continuar">
+
+				
+			  </form>
+			  
+			  <script type="text/javascript"
+				src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+			  
+			  <script type="text/javascript">
+				emailjs.init('AclLMwORysxN61ZuK')
+			  </script>
+
+		  <section class="ceckout-grid2">
+		<!-- Contenedor del carrito -->
+  <section id="cart-container"> 
+	<!-- Aquí se generarán dinámicamente los productos del carrito -->
+</section>
+<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+	<button onclick="history.back()" class="button alt">Regresar a la Tienda</button>
+	
+<div class="resumen-pedido">
+	<h3>Resumen del Pedido</h3>
+    <p><strong>Subtotal:</strong> <span id="subtotal">$0.00</span></p>
+    <p><strong>Envío Standard:</strong> <span id="envio">$0.00</span></p>
+    <p><strong>Total:</strong> <span id="total">$0.00</span></p>
+    <p><strong>Incluye:</strong> <span id="impuestos">$0.00 de impuestos</span></p>
+  </div>
+ 
+</section>
+</div>	
+	  </main>
+	  
+<!-- Footer -->
+<footer id="footer">
+	<div class="container">
+	  <section>
+		<div class="row">
+		  <div class="col-12">
+			<p class="footer-disclaimer" style="text-align: center; max-width: 600px; margin: 20px auto;">
+			  Nos reservamos el derecho de modificar este descargo de responsabilidad en cualquier momento sin previo aviso. Se recomienda revisar esta página periódicamente.
+			</p>
+		  </div>
+		</div>
+	  </section>
+	</div>
+  
+	<div id="copyright" class="container">
+	  <ul class="links" style="text-align: center; list-style: none; padding: 0;">
+		<li>&copy; 2025 SOULS. Todos los derechos reservados.</li>
+		<li>Diseño: <a>Ctrl_1</a></li>
+	  </ul>
+	</div>
+  </footer>
+  
+	<script src="./assets/js/carrito/cartService.js" defer></script>
+	<script src="./assets/js/carrito/cart.js" defer></script>
+	<script src="./assets/js/envioD.js"defer></script>
+	<script src="./assets/js/carrito/resume.js"defer></script>
+	<script src="./assets/js/email.js"></script>
+	
+</body>
+</html>

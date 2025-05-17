@@ -1,0 +1,111 @@
+.productos {
+    display: grid;
+    gap: 20px;
+    /* Definir columnas por defecto para pantallas grandes */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Media Query para tabletas (ejemplo) */
+@media screen and (max-width: 980px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr); /* Mostrar 2 columnas en tabletas */
+    }
+}
+
+/* Media Query para teléfonos móviles (ejemplo) */
+@media screen and (max-width: 736px) {
+    .productos {
+        grid-template-columns:2, 1fr; /* Mostrar 1 columna en móviles */
+    }
+}
+
+.producto-detalle {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+}
+/* seccion del carrito */
+
+a:hover:not(#cart), button:hover{
+    color: var(--color-acento);
+  }
+  cuenta-carrito{
+    position: absolute;
+    background-color: var(--color-acento);
+    border-radius: 100%;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    aspect-ratio: 1;
+    text-align: center;
+    /* margin-bottom: 15px; */
+  }
+  
+  
+.product-container {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-comprar {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #8c651c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+#verMas {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Estilos para el menú de tallas del producto */
+.producto .tallas-menu-container {
+    margin-top: 10px; /* Añade algo de espacio encima del menú de tallas */
+    margin-bottom: 10px; /* Añade algo de espacio debajo del menú de tallas */
+    text-align: left; /* Alinea la etiqueta y el select a la izquierda si se desea */
+}
+
+.producto .tallas-menu-container label {
+    margin-right: 5px;
+    font-size: 0.9em;
+    color: #d0d2d9; /* Adaptándose al color de texto de tu sitio */
+}
+
+.producto .talla-select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    background-color: #fff; /* Fondo para el select */
+    color: #333; /* Color de texto para el select */
+}
+
+/* Ajustes para móviles si es necesario */
+@media screen and (max-width: 736px) {
+    .producto .tallas-menu-container {
+        /* Podrías querer que el select ocupe todo el ancho o ajustar la alineación en móviles */
+    }
+    .producto .talla-select {
+        /* width: 100%; */ /* Ejemplo: hacer que el select ocupe todo el ancho en móviles */
+    }
+}
+
+.producto .product-link {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto para que no se vea azul por defecto */
+}
+
+.producto .product-link:hover h4 {
+    color: #8c651c; /* Opcional: cambia el color del título al pasar el mouse, como un enlace normal */
+}

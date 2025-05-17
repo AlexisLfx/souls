@@ -1,0 +1,133 @@
+/* product-detail.css */
+#main-product-detail {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: #0d0d0d; /* Fondo oscuro como en store */
+}
+
+#main-product-detail header h2 {
+    color: #d0d2d9; /* Color de título */
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.product-layout {
+    display: flex;
+    flex-wrap: wrap; /* Para responsividad */
+    gap: 30px;
+    color: #c5c5c5; /* Color de texto general para esta sección */
+}
+
+.product-image-column {
+    flex: 1 1 400px; /* Permite que crezca, base de 400px */
+    display: flex;
+    flex-direction: column; /* Para organizar miniaturas e imagen principal si las añades */
+    align-items: center;
+}
+
+.product-image-column .main-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #444; /* Borde sutil */
+    border-radius: 8px;
+    margin-bottom: 15px; /* Si hay miniaturas debajo */
+}
+
+/* Estilos para futuras miniaturas */
+.product-image-column .thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.product-image-column .thumbnail-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.product-image-column .thumbnail-img.active,
+.product-image-column .thumbnail-img:hover {
+    opacity: 1;
+    border-color: #8c651c; /* Color de acento */
+}
+
+
+.product-info-column {
+    flex: 2 1 500px; /* Permite que crezca más, base de 500px */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info-column h4,
+.product-info-column #product-name-title { /* Reutiliza el h2 del header si es el mismo */
+    color: #d0d2d9;
+    margin-bottom: 0.5em;
+}
+
+.product-info-column #product-description {
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.product-info-column #product-price-container {
+    margin-bottom: 1.5em;
+}
+
+.product-info-column .precio {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #8c651c; /* Color de acento */
+}
+
+.product-info-column .tallas-menu-container {
+    margin-bottom: 1.5em;
+}
+
+.product-info-column .tallas-menu-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.product-info-column .talla-select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #fff;
+}
+
+#add-to-cart-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #8c651c; /* Color de acento */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: inline-block; /* Para que no ocupe todo el ancho por defecto */
+    max-width: 250px; /* O el ancho que prefieras */
+}
+
+#add-to-cart-button:hover {
+    background-color: #a07b39;
+}
+
+/* Responsividad básica */
+@media screen and (max-width: 768px) {
+    .product-layout {
+        flex-direction: column;
+    }
+    .product-image-column,
+    .product-info-column {
+        flex-basis: auto; /* Que ocupen el ancho disponible */
+    }
+}

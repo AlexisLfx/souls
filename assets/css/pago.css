@@ -1,0 +1,106 @@
+:root{
+  font-family: 'papyrus';
+}
+body {
+  color: white;
+  margin: 0;
+ font-family: 'Papyrus', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #0d0d0d;
+  font-size: 1rem;
+}
+#cart-container{
+  background-color: #000000;
+  grid-template-columns: table-row;
+  border: 1px solid black;
+  padding: 20px;
+}
+#headerS {
+  align-items: center;
+  background: linear-gradient(-45deg, #8c651c, #3a301c, #302c24, #0d0d0d);
+  background-size: 400% 400%;
+  animation: animNav 10s ease infinite;
+  height: 12vh;
+}
+.resumen-pedido {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #000000;
+}
+.boton-comprar-responsive {
+  width: 100%;
+  max-width: 5px;
+  padding: 5px 14px;
+  font-size: 15px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.boton-comprar-responsive:hover {
+  background-color: #333;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .boton-comprar-responsive {
+    width: 100%;
+    font-size: 5px;
+    padding: 5px 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boton-comprar-responsive {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}
+
+#logo {
+  height: 50px;
+  margin: 20px;
+  border-radius: 6px;
+}
+
+
+  #center-contain {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e5e5e5; /* fondo general gris claro */
+  }
+  
+  .contenido-blanco {
+    background: black;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+ 
+  
