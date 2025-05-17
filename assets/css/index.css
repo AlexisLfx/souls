@@ -1,4 +1,4 @@
-/* Productos home*/
+
 #productos-container{
 
   position: relative;
@@ -37,82 +37,78 @@ justify-content: center;}
   border:unset;
   cursor:pointer;
 }
-/* Estilos para el contenedor del carrusel de imágenes del producto */
+
 .producto .image-carousel-container {
-  width: 250px;  /* Define el ancho específico para el viewport del carrusel, ajusta según necesites */
-  height: 400px; /* Define la altura específica para el viewport del carrusel, ajusta según necesites */
-  overflow-x: auto;   /* Habilita el scroll horizontal si la imagen es más ancha */
-  overflow-y: hidden;  /* Oculta el scroll vertical */
-  border: 1px solid #ddd; /* Opcional: para visualizar el contenedor */
-  margin-bottom: 10px;   /* Espacio inferior, similar al que ya tenías */
-  position: relative;    /* Para posicionamiento futuro si añades controles personalizados */
-  display: flex;         /* Ayuda a manejar la imagen interior */
-  align-items: center;   /* Centra la imagen verticalmente si es más pequeña que el contenedor */
-  background-color: #f9f9f9; /* Un fondo claro por si la imagen no ocupa todo */
+  width: 250px; 
+  height: 400px;
+  overflow-x: auto;  
+  overflow-y: hidden; 
+  border: 1px solid #ddd;
+  margin-bottom: 10px;  
+  position: relative;   
+  display: flex;        
+  align-items: center;  
+  background-color: #f9f9f9;
 }
 
 .producto .image-carousel-container img {
-  max-width: none;     /* Permite que la imagen sea más ancha que el contenedor */
-  height: 100%;        /* La altura de la imagen llenará la altura del contenedor */
-  width: auto;         /* El ancho se ajustará para mantener la proporción */
-  display: block;      /* Buena práctica para imágenes */
-  object-fit: contain; /* Asegura que toda la imagen sea visible y se escale para caber en altura. Si es más ancha, permitirá el scroll. */
-  flex-shrink: 0;      /* Evita que la imagen se encoja si el contenedor flex intenta hacerlo */
+  max-width: none;    
+  height: 100%;       
+  width: auto;        
+  display: block;     
+  object-fit: contain;
+  flex-shrink: 0;     
 }
 
-/* Media Query para teléfonos móviles (ejemplo) */
+
 @media screen and (max-width: 736px) {
   .productos {
-      grid-template-columns: repeat(2, 1fr); /* Mostrar 2 columnas en móviles */
-      /* Puedes ajustar el 'gap' si es necesario para que haya espacio entre las tarjetas */
-      gap: 15px; /* Ejemplo de espacio reducido para móviles */
+      grid-template-columns: repeat(2, 1fr);
+     
+      gap: 15px;
   }
 }
 @media screen and (max-width: 736px) {
-  /* ... (tu código existente para .productos) ... */
+ 
 
-  .tarjeta-producto, .producto { /* Aplica a la clase que uses para tus tarjetas */
-      /* Ajusta el padding interno si es necesario */
+  .tarjeta-producto, .producto {
+     
       padding: 10px;
   }
 
   .tarjeta-producto img, .producto img {
-      /* La imagen ya debería ser responsiva con max-width: 100% y height: auto,
-         pero verifica que no tenga un ancho fijo que impida que se encoja. */
+     
   }
 
-  .tarjeta-producto h3, .producto h4 { /* Ajusta según la etiqueta del título */
-      font-size: 0.9em; /* Reduce un poco el tamaño del título si es necesario */
-      margin-bottom: 0.5em; /* Reduce el margen inferior */
+  .tarjeta-producto h3, .producto h4 {
+      font-size: 0.9em;
+      margin-bottom: 0.5em;
   }
 
-  .tarjeta-producto p.precio, .producto .precio { /* Ajusta según la clase del precio */
-      font-size: 0.8em; /* Reduce el tamaño del precio */
-  }
-
-  .tarjeta-producto button, .producto .btn-agregar { /* Ajusta según la clase del botón */
+  .tarjeta-producto p.precio, .producto .precio {
       font-size: 0.8em;
-      padding: 6px 10px; /* Padding más pequeño para el botón */
-      /* Considera hacer el botón de ancho completo si se ve mejor en dos columnas */
-      /* width: 100%; */
-      /* margin-top: 5px; */
   }
 
-  /* Si tienes descripciones de producto visibles */
+  .tarjeta-producto button, .producto .btn-agregar {
+      font-size: 0.8em;
+      padding: 6px 10px;
+    
+  }
+
   .tarjeta-producto p, .producto p {
-      font-size: 0.75em; /* Reduce el tamaño de la fuente de la descripción */
-      margin-bottom: 0.5em; /* Reduce el margen */
+      font-size: 0.75em;
+      margin-bottom: 0.5em;
   }
   .producto .image-carousel-container {
-    width: 150px;  /* Define el ancho específico para el viewport del carrusel, ajusta según necesites */
-    height: 250px; /* Define la altura específica para el viewport del carrusel, ajusta según necesites */
-    overflow-x: auto;   /* Habilita el scroll horizontal si la imagen es más ancha */
-    overflow-y: hidden;  /* Oculta el scroll vertical */
-    border: 1px solid #ddd; /* Opcional: para visualizar el contenedor */
-    margin-bottom: 10px;   /* Espacio inferior, similar al que ya tenías */
-    position: relative;    /* Para posicionamiento futuro si añades controles personalizados */
-    display: flex;         /* Ayuda a manejar la imagen interior */
-    align-items: center;   /* Centra la imagen verticalmente si es más pequeña que el contenedor */
-    background-color: #f9f9f9; /* Un fondo claro por si la imagen no ocupa todo */
+    width: 150px; 
+    height: 250px;
+    overflow-x: auto;  
+    overflow-y: hidden; 
+    border: 1px solid #ddd;
+    margin-bottom: 10px;  
+    position: relative;   
+    display: flex;        
+    align-items: center;  
+    background-color: #f9f9f9;
   }
 }
