@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>Strongly Typed by HTML5 UP</title>
+    <title>SOULS</title>
 
-    <!-- Enlace a hojas de estilo -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -116,16 +115,15 @@
 					return;
 				}
 		
-				// Diccionario de búsqueda con términos clave y sus enlaces correspondientes
 				const pages = {
 					"tienda": "store.html",
 					"sobre nosotros": "about_us.html",
-					"comunidad": "community.html", // Si tienes esta página
+					"comunidad": "community.html", //pendiente
 					"inicio": "index.html",
-					"contacto": "#contacto" // Puedes poner un ID o cambiar por una URL específica
+					"contacto": "#contacto" 
 				};
 		
-				// Verificar si el término de búsqueda coincide con alguna página
+
 				for (const key in pages) {
 					if (query.includes(key)) {
 						window.location.href = pages[key];
@@ -133,7 +131,7 @@
 					}
 				}
 		
-				// Si no coincide con ninguna página, busca dentro del contenido actual
+				// Si no coincide con ninguna página, busca dentro 
 				const elements = document.querySelectorAll("body *"); 
 				let found = false;
 		
