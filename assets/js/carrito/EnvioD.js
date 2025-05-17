@@ -14,17 +14,13 @@ function actualizarFechaEnvio(tipo = "standard") {
 
   document.getElementById("fecha-envio").textContent = capitalizada;
 
-  // Actualizar también el precio de envío si es necesario
   const costo = tipo === "express" ? "$180.00" : "$75.00";
   document.getElementById("envio").textContent = costo;
 
-  // Puedes agregar más lógica si lo necesitas
 }
 
-// Llamar la función al cargar la página para actualizar la fecha de envío
 actualizarFechaEnvio();
 
-// Agregar evento para manejar cambios en el tipo de envío
 document.getElementById("tipo-envio").addEventListener("change", function() {
   actualizarFechaEnvio(this.value);
 });
