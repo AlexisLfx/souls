@@ -151,7 +151,7 @@ const hoodies = [
         { id: 122, img: "images/productos/polos/122.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
         { id: 123, img: "images/productos/polos/123.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
         { id: 124, img: "images/productos/polos/124.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
-        { id: 124, img: "images/productos/polos/124.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
+        { id: 125, img: "images/productos/polos/125.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
         { id: 126, img: "images/productos/polos/126.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
         { id: 127, img: "images/productos/polos/127.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
         { id: 128, img: "images/productos/polos/128.WebP", nombre: "BlueHood", descripcion: "Hoodie cómodo en polos.", precio: "24.99" },
