@@ -35,7 +35,7 @@
 
     <a class="btn-flotanteC" href="./cart.html" id="cart-flotante-detalle"><img src="./images/carrito.png" alt="Carrito"><span id="cuenta-carrito-detalle">0</span></a>
 
-    <section id="headerS">
+    <section id="headerX">
         <nav id="nav">
             <ul>
                 <li class="espaciado">
@@ -54,16 +54,17 @@
                     </ul>
                 </li>
             </ul>
-            <div class="search-container">
-                <form id="searchFormDetail" onsubmit="search(event)">
-                    <input type="text" id="searchInputDetail" class="search-bar" placeholder="Buscar...">
-                    <button class="search-button" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-            </div>
+            <!-- Barra de búsqueda alineada a la derecha -->
+					<div class="search-container">
+						<form id="searchForm" onsubmit="search(event)">
+							<input type="text" id="searchInput" class="search-bar" placeholder="Buscar...">
+							<button class="search-button" type="submit">
+								<i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
+							</button>
+						</form>
+					</div>
         </nav>
-        <h5>Detalles Exclusivos Para Ti</h5>
+
          <canvas id="canvas">
                 <textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" oninput="render()"></textarea>
                 <pre id="error"></pre>

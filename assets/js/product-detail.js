@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('product-name-title').textContent = currentProduct.nombre;
         document.getElementById('main-product-image').src = currentProduct.img;
         document.getElementById('main-product-image').alt = currentProduct.nombre;
-        document.getElementById('product-description').textContent = currentProduct.descripcion;
+        document.getElementById('product-description').innerHTML = currentProduct.descripcion;
         document.getElementById('product-price').textContent = `$${parseFloat(currentProduct.precio).toFixed(2)}`;
 
         // Show size selector only for relevant categories

@@ -33,7 +33,7 @@ function mostrarProductos(lista, productos, cantidad, id) {
                 </div>
                 <h4>${productos[i].nombre}</h4>
             </a>
-            <p>${productos[i].descripcion}</p>
+
             ${sizeMenuHTML}
             <span class="precio">$${parseFloat(productos[i].precio).toFixed(2)}</span>
             <button class="btn-agregar" data-product-id="${productos[i].id}" data-select-id="talla-store-${productos[i].id}-${i}">Agregar al carrito</button>
